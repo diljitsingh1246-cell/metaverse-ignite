@@ -1,0 +1,320 @@
+/* ===================================================
+   🌌 METAVERSE IGNITE LANDING PAGE STYLE SHEET
+   Clean | Animated | Responsive
+=================================================== */
+
+/* ===== Global Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00ffff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00ffff;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: url("Gemini_Generated_Image_odpr8rodpr8rodpr.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+  animation: bgMove 20s ease-in-out infinite alternate;
+}
+
+/* Background animation */
+@keyframes bgMove {
+  from { background-position: center top; }
+  to { background-position: center bottom; }
+}
+
+/* Gradient overlay for text visibility */
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  z-index: 1;
+}
+
+/* Floating particle lights */
+.bg-lights {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg-lights span {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: float 8s linear infinite;
+}
+
+.bg-lights span:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.bg-lights span:nth-child(2) { top: 30%; left: 60%; animation-delay: 2s; }
+.bg-lights span:nth-child(3) { top: 50%; left: 40%; animation-delay: 4s; }
+.bg-lights span:nth-child(4) { top: 70%; left: 80%; animation-delay: 6s; }
+.bg-lights span:nth-child(5) { top: 90%; left: 10%; animation-delay: 8s; }
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(-40px) scale(1.2); opacity: 0.7; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Hero text */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  animation: text-glow 3s ease-in-out infinite alternate;
+}
+
+.hero-content h1 span {
+  color: #ffae00;
+}
+
+/* Text glow animation */
+@keyframes text-glow {
+  from { text-shadow: 0 0 10px #ffae00, 0 0 20px #ffae00; }
+  to { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
+}
+
+/* Button styling */
+.btn.glow-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  color: #fff;
+  border: 2px solid #ffae00;
+  border-radius: 30px;
+  background: transparent;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #ffae00;
+  animation: pulse 2s infinite alternate;
+}
+
+.btn.glow-btn:hover {
+  background: #ffae00;
+  color: #000;
+  box-shadow: 0 0 25px #ffae00;
+}
+
+/* Button pulse glow */
+@keyframes pulse {
+  from { box-shadow: 0 0 10px #ffae00; }
+  to { box-shadow: 0 0 25px #00ffff; }
+}
+
+/* ===== Events Section ===== */
+.events {
+  padding: 100px 50px;
+  text-align: center;
+  background: #111;
+}
+
+.events h2 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  margin-bottom: 50px;
+  animation: headingGlow 3s ease-in-out infinite alternate;
+}
+
+/* Event grid */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+/* Event card animation */
+.event-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 20px;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.8s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgb(0, 255, 255);
+}
+
+.event-card.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.event-card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.event-card h3 {
+  color: #fff;
+}
+
+/* ===== About Section ===== */
+.about {
+  padding: 100px 50px;
+  background: #0f0f0f;
+  text-align: center;
+}
+
+.about h2 {
+  color: #00ffff;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  animation: headingGlow 3s ease-in-out infinite alternate;
+}
+
+.about p {
+  color: #ccc;
+  max-width: 800px;
+  margin: 10px auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ===== Contact Section ===== */
+.contact {
+  padding: 100px 50px;
+  background: #111;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #00ffff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: headingGlow 3s ease-in-out infinite alternate;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+/* Social icons */
+.social-links img {
+  width: 40px;
+  margin: 10px;
+  filter: brightness(0) invert(1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.social-links img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #0a0a0a;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #222;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* ===== Heading Glow Animation ===== */
+@keyframes headingGlow {
+  from { text-shadow: 0 0 10px #00ffff; }
+  to { text-shadow: 0 0 25px #ffae00; }
+}
+
+/* ===== Section Fade-In Animation (on scroll) ===== */
+section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease-out;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .events, .about, .contact {
+    padding: 70px 20px;
+  }
+}
