@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metaverse Ignite | College Fest</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="logo">Metaverse Ignite</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section id="home" class="hero">
+    <div class="bg-lights">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="gradient-overlay"></div>
+
+    <div class="hero-content">
+      <h1 class="fade-in">Welcome to <span>Metaverse Ignite</span></h1>
+      <p class="slide-up">
+        Experience creativity, innovation, and culture — where the real and virtual worlds unite.
+      </p>
+      <a href="#events" class="btn glow-btn">Explore Events</a>
+    </div>
+  </section>
+
+  <!-- ===== Events Section ===== -->
+  <section id="events" class="events">
+    <h2>Our Events</h2>
+    <div class="event-grid">
+      <div class="event-card">
+        <img src="logo.png" alt="Logo Design" />
+        <h3>Logo Design</h3>
+      </div>
+      <div class="event-card">
+        <img src="DESIGN.jpg" alt="E-Poster" />
+        <h3>E-Poster</h3>
+      </div>
+      <div class="event-card">
+        <img src="sing.jpg" alt="Singing" />
+        <h3>Singing</h3>
+      </div>
+      <div class="event-card">
+        <img src="dance.png" alt="Dancing" />
+        <h3>Dancing</h3>
+      </div>
+      <div class="event-card">
+        <img src="ts.png" alt="Quiz" />
+        <h3>Quiz</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section id="about" class="about">
+    <h2>About Metaverse Ignite</h2>
+    <p>
+      “Metaverse Ignite” is the annual college fest that celebrates creativity, innovation, and talent. 
+      Hosted by our vibrant student community, the fest bridges the gap between the digital and physical worlds — 
+      offering a blend of art, technology, and culture.
+    </p>
+    <p>
+      From graphic design challenges to soulful performances, we invite students from all disciplines 
+      to showcase their skills, imagination, and teamwork spirit.
+    </p>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong>jatttmaam@gmail.com</p>
+      <p><strong>Phone:</strong>+91 90560-64954</p>
+      <p><strong>Landline:</strong> 0181-2456789</p>
+      <p><strong>Address:</strong>Tech & Creative Fest College, Gill Park, Gill Road, LUDHIANA</p>
+      <div class="social-links">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 Metaverse Ignite. Owned by Diljit Singh. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== Animation Script (Scroll Reveal) ===== -->
+  <script>
+    const elements = document.querySelectorAll("section, .event-card, .social-links img");
+    const revealOnScroll = () => {
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add("show");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Trigger on load
+  </script>
+
+</body>
+</html>
